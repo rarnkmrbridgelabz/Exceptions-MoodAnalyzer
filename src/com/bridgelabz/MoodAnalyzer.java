@@ -1,22 +1,25 @@
 package com.bridgelabz;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MoodAnalyzer {
+    public MoodAnalyzer() {
+    }
     public String message;
 
-    public MoodAnalyzer(String message){
+    public MoodAnalyzer(String message) {
         this.message = message;
     }
-    public  String analyseMood() {
-        if(this.message.toLowerCase().contains("sad")) {
-            return "sad";
-        }
-        else {
-            return  "Happy";
-        }
-    }
 
+    public  String analyseMood() {
+        try {
+            if(this.message.toLowerCase().contains("sad")) {
+                return "sad";
+            }
+            else {
+                return  "Happy";
+            }
+        } catch (NullPointerException e) {
+            return null;
+        }
     }
+}
 
